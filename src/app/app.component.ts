@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { PersonaModel } from './Models/Persona.models';
+
+import { PersonaService } from './Services/Persona.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Registro-Y-Listado-Firebase';
+  Personas:PersonaModel[];
+  
+  Op:boolean;
+  constructor(private _PersonaService:PersonaService){
+    this.Personas = this._PersonaService.getPersonas();
+  this.Op=false;
+    
+  }
+  Reg(){
+    this.Op=true;
+  }
 }

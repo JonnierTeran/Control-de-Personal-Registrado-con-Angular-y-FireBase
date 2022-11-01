@@ -1,0 +1,36 @@
+<h2 class="Encabezado">
+  &nbsp;&nbsp;&nbsp;Listado de personas registradas con exito
+</h2>
+<div class="Lista">
+  <div
+    *ngIf="Personas.length == 0"
+    style="color: rgb(247, 247, 247); font-size: 18px"
+  >
+    <hr />
+    <hr />
+    <br />
+    <h3>
+      NO SE ENCUENTRAN REGISTROS EN LA BASE DE DATOS <br />
+      POR FAVOR, AGREGAR UN NUEVO REGISTRO
+    </h3>
+    <br />
+    <hr />
+    <hr />
+  </div>
+  <ul *ngFor="let element of Personas; let i = index">
+    <li>
+      <hr />
+      <hr />
+      <br />
+      {{ i + 1 + " - " + element.getNombre() + " " + element.getApellido() }}
+      <button id="Select">Seleccionar</button>
+      <br />
+      <br />
+      <hr />
+      <hr />
+    </li>
+  </ul>
+  <br />
+  <br />
+  <br />
+</div>

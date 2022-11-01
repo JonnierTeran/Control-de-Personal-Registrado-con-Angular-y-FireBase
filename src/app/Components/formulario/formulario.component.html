@@ -1,0 +1,28 @@
+<form #Form="ngForm" (ngSubmit)="Form.valid && Registrar(Form)" *ngIf="Option">
+
+  <div class="item">
+    <h2 class="Encabezado">Formulario de Registro</h2>
+    <label for="Nombre" class="label">Nombres</label>
+    <input
+      type="text"
+      name="apellido"
+      placeholder=" &nbsp; &nbsp;D I G I T E  &nbsp; L O S  &nbsp;  N O M B R E S "
+      [(ngModel)]='nombre'
+      required/>
+  </div>
+  <div class="item">
+    <label for="Apellido" class="label">Apellidos</label>
+    <input
+      type="text"
+      name="Apellido"
+      placeholder=" &nbsp; &nbsp;D I G I T E  &nbsp;  L O S  &nbsp;A P E L L I D O S  &nbsp;"
+      [(ngModel)]='Apellidos'
+      required
+    />
+  </div>
+  <div class="Options">
+    <button type="submit">Registrar</button>
+    <button>Actualizar</button>
+    <button>Eliminar</button>
+  </div>
+</form>
