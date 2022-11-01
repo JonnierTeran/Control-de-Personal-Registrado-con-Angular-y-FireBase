@@ -48,14 +48,15 @@ input:focus {
 
 
 .Options{
-    margin-left: 10em;
+    margin-left: 12em;
     float: left;
     margin-top: 1em;
+    justify-content: space-around;
 }
 button{
     margin-left: 35px;
     padding: 8px;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     background-color: blue;
     color: white;
@@ -84,6 +85,13 @@ li{
 li:active{
     background-color: rgb(2, 20, 0);
 }
+li:hover{
+    background-color: rgb(108, 83, 45);
+}
 #Select{
     float: right;
+}
+#Button-reg{
+    margin-left: 90px;
+    border-radius: 15%;
 }

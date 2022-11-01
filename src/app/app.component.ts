@@ -10,14 +10,11 @@ import { PersonaService } from './Services/Persona.service';
 })
 export class AppComponent {
   Personas:PersonaModel[];
-  
-  Op:boolean;
+ 
   constructor(private _PersonaService:PersonaService){
     this.Personas = this._PersonaService.getPersonas();
-  this.Op=false;
+
     
   }
-  Reg(){
-    this.Op=true;
-  }
+  
 }

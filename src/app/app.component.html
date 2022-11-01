@@ -6,14 +6,9 @@
     </h1>
   </div>
 
-  <button (click)="Reg()" *ngIf="!Op">REGISTRAR PERSONAL</button>
+  
+  
 
-  <app-formulario *ngIf="Op"></app-formulario>
+ <router-outlet></router-outlet> 
 
-  <br />
-
-  <div>
-    <br />
-    <app-listado-personas [Personas]="Personas"></app-listado-personas>
-  </div>
 </div>

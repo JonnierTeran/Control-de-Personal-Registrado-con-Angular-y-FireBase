@@ -1,3 +1,5 @@
+<button id="Button-reg" (click)=" AgregarNuevo()"> + N U E V O R E G I S T R O + </button>
+
 <h2 class="Encabezado">
   &nbsp;&nbsp;&nbsp;Listado de personas registradas con exito
 </h2>
@@ -23,7 +25,7 @@
       <hr />
       <br />
       {{ i + 1 + " - " + element.getNombre() + " " + element.getApellido() }}
-      <button id="Select">Seleccionar</button>
+      <button id="Select" (click)="Seleccionar(i)">Seleccionar</button>
       <br />
       <br />
       <hr />
@@ -33,4 +35,7 @@
   <br />
   <br />
   <br />
+
+  <!--<app-formulario></app-formulario>-->
+
 </div>

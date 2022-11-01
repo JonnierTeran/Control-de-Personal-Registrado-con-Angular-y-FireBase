@@ -14,6 +14,7 @@ import { ListadoPersonasComponent } from './Components/listado-personas/listado-
 import { ErrorComponent } from './Components/error/error.component';
 
 
+
 //Decorador del componente modulo
 @NgModule({
   //declaracion de compontentes
