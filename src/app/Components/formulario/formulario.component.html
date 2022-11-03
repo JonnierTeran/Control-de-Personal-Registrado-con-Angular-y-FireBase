@@ -1,14 +1,17 @@
 <form #Form="ngForm" (ngSubmit)="Form.valid && Registrar(Form)">
   <div class="item">
-    <h2 class="Encabezado">&nbsp;&nbsp;&nbsp;&nbsp;Formulario de Registro</h2>
+    <h2 class="Encabezado"*ngIf="!indice">&nbsp;&nbsp;&nbsp;&nbsp;Formulario de Registro</h2>
+    <h2 class="Encabezado" *ngIf="indice">&nbsp;&nbsp;&nbsp;&nbsp;Formulario de Ediciòn</h2>
     <label for="Nombre" class="label">Nombres</label>
     <input
       type="text"
       name="apellido"
       placeholder=" &nbsp; &nbsp;D I G I T E  &nbsp; L O S  &nbsp;  N O M B R E S "
       [(ngModel)]="nombre"
+      #nom ="ngModel"
       required
     />
+    <span *ngIf="!nom.valid && nom.touched">Ingrese  la informacion solicitada</span>
   </div>
   <div class="item">
     <label for="Apellido" class="label">Apellidos</label>
@@ -17,8 +20,10 @@
       name="Apellido"
       placeholder=" &nbsp; &nbsp;D I G I T E  &nbsp;  L O S  &nbsp;A P E L L I D O S  &nbsp;"
       [(ngModel)]="Apellidos"
+      #apell ="ngModel"
       required
     />
+    <span *ngIf="!apell.valid && apell.touched">Ingrese  la informacion solicitada</span>
   </div>
   <div class="Options">
     <div *ngIf="!indice">
@@ -27,10 +32,10 @@
     <br />
     <br />
   </div>
-    <div *ngIf="indice"> 
-    <button (click)="ActualizarPersona()">A c t u a l i z a r</button>
-    <button (click)="EliminarPersona()">E l i m i n a r</button>
-    <button (click)="Cancelar()">C a n c e l a r</button>
+    <div *ngIf="indice" >  
+    <button (click)="ActualizarPersona()">A c t u a l i z a r</button> 
+    <button (click)="EliminarPersona()">E l i m i n a r</button> 
+    <button (click)="Cancelar() ">C a n c e l a r</button> 
   </div>
   </div>
 </form>

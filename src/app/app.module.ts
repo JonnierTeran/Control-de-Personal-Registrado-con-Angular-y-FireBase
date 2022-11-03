@@ -7,11 +7,14 @@ import { FormsModule } from '@angular/forms';
 //Componentes de la aplicacion
 import { AppComponent } from './app.component';
 import { FormularioComponent } from './Components/formulario/formulario.component';
+import { ListadoPersonasComponent } from './Components/listado-personas/listado-personas.component';
+import { ErrorComponent } from './Components/error/error.component';
 
 //Servicios
 import { PersonaService } from './Services/Persona.service';
-import { ListadoPersonasComponent } from './Components/listado-personas/listado-personas.component';
-import { ErrorComponent } from './Components/error/error.component';
+import { DataService } from './Services/Data.service';
+import {  HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -20,9 +23,9 @@ import { ErrorComponent } from './Components/error/error.component';
   //declaracion de compontentes
   declarations: [AppComponent, FormularioComponent, ListadoPersonasComponent, ErrorComponent],
   //Declaracion de modulos
-  imports: [BrowserModule, AppRoutingModule,FormsModule],
+  imports: [BrowserModule, AppRoutingModule,FormsModule, HttpClientModule ],
   //Declaracion de servicios
-  providers: [PersonaService],
+  providers: [PersonaService,DataService],
   //Declaracion del primer componente
   bootstrap: [AppComponent],
 })

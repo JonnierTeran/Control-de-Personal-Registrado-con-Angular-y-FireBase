@@ -1,8 +1,8 @@
 export class PersonaModel {
   //Atributos del modelo
 
-  private Nombre: string;
-  private Apellido: string;
+  Nombre: string;
+  Apellido: string;
 
   //Inicializacion de atributos
   constructor(Nombre: string, Apellido: string) {

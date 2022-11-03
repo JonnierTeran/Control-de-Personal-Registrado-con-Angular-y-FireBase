@@ -28,11 +28,12 @@ export class FormularioComponent implements OnInit {
 
   ngOnInit(): void {
     this.indice = this._Route.snapshot.params['indice'];
+
     if(this.indice){
       let Persona: PersonaModel;
       Persona = this._PersonaService.EncontrarPersona(this.indice);
-      this.nombre = Persona.getNombre();
-      this.Apellidos = Persona.getApellido();
+      this.nombre = Persona.Nombre;
+      this.Apellidos = Persona.Apellido;
 
     }
   }

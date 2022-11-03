@@ -9,10 +9,10 @@ import { PersonaService } from './Services/Persona.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  Personas:PersonaModel[];
+  
  
   constructor(private _PersonaService:PersonaService){
-    this.Personas = this._PersonaService.getPersonas();
+ 
 
     
   }

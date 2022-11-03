@@ -92,6 +92,12 @@ li:hover{
     float: right;
 }
 #Button-reg{
-    margin-left: 90px;
+    margin-left: 250px;
     border-radius: 15%;
+}
+span{
+    display: block;
+    margin-top: 5px;
+    margin-left: 120px;
+    color: rgb(74, 241, 13);
 }

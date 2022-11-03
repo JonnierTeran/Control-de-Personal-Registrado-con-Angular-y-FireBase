@@ -1,24 +1,24 @@
 //Import del modelo necesario
+import { Injectable } from '@angular/core';
 import { PersonaModel } from '../Models/Persona.models';
+import { DataService } from './Data.service';
 
+@Injectable()
 //Creacion y exportacion del servicio
 export class PersonaService {
   //Atributo del servicio
-  private Personas: PersonaModel[];
+   Personas: PersonaModel[];
 
   //inicializacion del arreglo
-  constructor() {
-    this.Personas = []
-  }
+  constructor(private _DataService:DataService) {
 
-  public getPersonas(): PersonaModel[] {
-    return this.Personas;
-  }
+    this.Personas = this._DataService.GetPersonas();
 
+  }
   public setAgregarPersona(Persona:PersonaModel):void{
       this.Personas.push(Persona);
+      this._DataService.RegistrarPersona(this.Personas)
   }
-
   public EncontrarPersona(index:number):PersonaModel{
     let Persona: PersonaModel = this.Personas[index];
     return Persona;
