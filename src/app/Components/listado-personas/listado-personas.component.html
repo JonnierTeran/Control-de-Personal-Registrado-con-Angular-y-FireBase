@@ -9,7 +9,7 @@
     *ngIf="Personas.length == 0"
     style="color: rgb(247, 247, 247); font-size: 18px"
   >
-  <br><br><br>
+  <span>El Personal  exitosamente encontrado en la base de datos: </span>
     <hr />
     <br />
     <h3>
@@ -19,7 +19,6 @@
     <br />
     <hr />
   </div>
-  <span>El Personal  exitosamente encontrado en la base de datos: </span>
   <ul *ngFor="let element of Personas; let i = index">
     <li>
       <hr />
