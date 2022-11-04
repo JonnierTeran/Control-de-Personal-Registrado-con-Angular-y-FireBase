@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import {  HttpClientModule } from '@angular/common/http';
 
 //Componentes de la aplicacion
 import { AppComponent } from './app.component';
@@ -13,10 +14,6 @@ import { ErrorComponent } from './Components/error/error.component';
 //Servicios
 import { PersonaService } from './Services/Persona.service';
 import { DataService } from './Services/Data.service';
-import {  HttpClientModule } from '@angular/common/http';
-
-
-
 
 //Decorador del componente modulo
 @NgModule({
