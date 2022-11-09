@@ -1,41 +1,62 @@
-<form #Form="ngForm" (ngSubmit)="Form.valid && Registrar(Form)">
+<!--Formulario de Registro y Actualizacion de personas-->
+<!-- Se define la estructura del formulario y se declara que es un formulario angular
+ademas se define el evento ngSubmit el cual solo accede cuando el formulario es valido -->
+<form #Form="ngForm" (ngSubmit)="Form.valid && RegistrarPersona(Form)">
   <div class="item">
-    <h2 class="Encabezado"*ngIf="!indice">&nbsp;&nbsp;&nbsp;&nbsp;Formulario de Registro</h2>
-    <h2 class="Encabezado" *ngIf="indice">&nbsp;&nbsp;&nbsp;&nbsp;Formulario de Ediciòn</h2>
+    <!-- sera un Formulario de registro cuando no hayan valores en el parametro url-->
+    <h2 class="Encabezado" *ngIf="!indiceUrl">
+      &nbsp;&nbsp;&nbsp;&nbsp;Formulario de Registro
+    </h2>
+    <!-- Sera un formulario de edicion cuando hayan parametros en la Url -->
+    <h2 class="Encabezado" *ngIf="indiceUrl">
+      &nbsp;&nbsp;&nbsp;&nbsp;Formulario de Ediciòn
+    </h2>
+    <!-- label e input para los nombres -->
     <label for="Nombre" class="label">Nombres</label>
+    <!-- input requerido , con two way bindong, ngModel, y localReference -->
     <input
       type="text"
       name="apellido"
       placeholder=" &nbsp; &nbsp;D I G I T E  &nbsp; L O S  &nbsp;  N O M B R E S "
-      [(ngModel)]="nombre"
-      #nom ="ngModel"
+      [(ngModel)]="nombreInput"
+      #nom="ngModel"
       required
     />
-    <span *ngIf="!nom.valid && nom.touched">Ingrese  la informacion solicitada</span>
+    <!-- Aviso de Error por medio del evento touched y Validacion por local reference . valid -->
+    <span *ngIf="!nom.valid && nom.touched"
+      >Ingrese la informacion solicitada</span
+    >
   </div>
   <div class="item">
+     <!-- label e input para los apellidos -->
     <label for="Apellido" class="label">Apellidos</label>
+     <!-- input requerido , con two way bindong, ngModel, y localReference -->
     <input
       type="text"
       name="Apellido"
       placeholder=" &nbsp; &nbsp;D I G I T E  &nbsp;  L O S  &nbsp;A P E L L I D O S  &nbsp;"
-      [(ngModel)]="Apellidos"
-      #apell ="ngModel"
+      [(ngModel)]="ApellidosInput"
+      #apell="ngModel"
       required
     />
-    <span *ngIf="!apell.valid && apell.touched">Ingrese  la informacion solicitada</span>
+    <!-- Aviso de Error por medio del evento touched y Validacion por local reference . valid -->
+    <span *ngIf="!apell.valid && apell.touched"
+      >Ingrese la informacion solicitada</span
+    >
   </div>
+<!--Botones para el formulario de registro-->
   <div class="Options">
-    <div *ngIf="!indice">
-    <button type="submit">R e g i s t r a r</button>
-    <button (click)="Cancelar()">C a n c e l a r</button>
-    <br />
-    <br />
-  </div>
-    <div *ngIf="indice" >  
-    <button (click)="ActualizarPersona()">A c t u a l i z a r</button> 
-    <button (click)="EliminarPersona()">E l i m i n a r</button> 
-    <button (click)="Cancelar() ">C a n c e l a r</button> 
-  </div>
+    <div *ngIf="!indiceUrl">
+      <button type="submit">R e g i s t r a r</button>
+      <button (click)="Cancelar()">C a n c e l a r</button>
+      <br />
+      <br />
+    </div>
+    <div *ngIf="indiceUrl">
+      <!--Botones para el formulario de Actualizacion-->
+      <button (click)="ActualizarPersona()">A c t u a l i z a r</button>
+      <button (click)="EliminarPersona()">E l i m i n a r</button>
+      <button (click)="Cancelar()">C a n c e l a r</button>
+    </div>
   </div>
 </form>
