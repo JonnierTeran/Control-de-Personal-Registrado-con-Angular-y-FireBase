@@ -1,15 +1,21 @@
-<button id="Button-reg" (click)=" AgregarNuevo()"> + N U E V O R E G I S T R O + </button>
+<!--Componente Listado-->
+<!--Boton para redireccionar al componente formulario-->
+<button id="Button-reg" (click)=" AgregarNuevoPersonal()"> + N U E V O R E G I S T R O + </button>
 
 <h2 class="Encabezado">
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Listado de personal registrado con exito
 </h2>
 
 <div class="Lista">
+  <!--Mensaje de informacion que se muestra cuando hay elementos registrados en el Arreglo-->
+  <span *ngIf="Personas.length > 0">El Personal  exitosamente encontrado en la base de datos: </span>
+  
+  <!--Aviso de cero registros encontrados en la base de datos-->
   <div
     *ngIf="Personas.length == 0"
     style="color: rgb(247, 247, 247); font-size: 18px"
   >
-  <span>El Personal  exitosamente encontrado en la base de datos: </span>
+  <span>No se registra Personal  en la base de datos, intente nuevamente: </span>
     <hr />
     <br />
     <h3>
@@ -19,13 +25,15 @@
     <br />
     <hr />
   </div>
+
+  <!--Listado del personal registrado en el arreglo por medio de una directiva ngFor y listas desordenadas-->
   <ul *ngFor="let element of Personas; let i = index">
     <li>
       <hr />
       <hr />
       <br />
       {{ i + 1 + " - " + element.Nombre + " " + element.Apellido}}
-      <button id="Select" (click)="Seleccionar(i)">Seleccionar</button>
+      <button id="Select" (click)="SeleccionarPersona(i)">Seleccionar</button>
       <br />
       <br />
       <hr />
@@ -35,7 +43,4 @@
   <br />
   <br />
   <br />
-
-  <!--<app-formulario></app-formulario>-->
-
 </div>
